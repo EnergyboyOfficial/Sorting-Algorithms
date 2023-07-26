@@ -1,8 +1,11 @@
-# Linear search
+# Linear search algorithm
 def linear_search(l, e):
-    return l.index(e) if e in l else -1
+    for i in range(len(l)):
+        if l[i] == e:
+            return i
+    return -1
 
-# Binary search (works on a sorted list)
+# Binary search algorithm (works on a sorted list)
 def binary_search(l, e):
     low, high = 0, len(l) - 1
 
@@ -17,11 +20,11 @@ def binary_search(l, e):
 
     return -1
 
-# Selection sort
+# Selection sort algorithm
 def selection_sort(l):
     return sorted(l)
 
-# Insertion sort
+# Insertion sort algorithm
 def insertion_sort(l):
     sorted_list = l.copy()
     for i in range(1, len(sorted_list)):
@@ -33,7 +36,7 @@ def insertion_sort(l):
         sorted_list[j + 1] = key
     return sorted_list
 
-# Merge sort
+# Merge sort algorithm
 def merge_sort(l):
     if len(l) <= 1:
         return l
@@ -61,7 +64,7 @@ def merge(left, right):
     return merged_list
 
 # Example usage:
-sample_list = [4, 2, 7, 1, 9, 5]
+sample_list = [4, 2, 7, 1, 9]
 element_to_find = 7
 
 print("Linear Search:", linear_search(sample_list, element_to_find))
